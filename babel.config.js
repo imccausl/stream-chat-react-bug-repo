@@ -1,22 +1,22 @@
 module.exports = {
   env: {
     test: {
-      plugins: [['@babel/plugin-transform-modules-commonjs', { loose: true }]],
+      plugins: [[require.resolve('@babel/plugin-transform-modules-commonjs'), { loose: true }]],
     },
   },
   ignore: ['src/@types/*'],
   plugins: [
-    'babel-plugin-dynamic-import-node',
+    require.resolve('babel-plugin-dynamic-import-node'),
   ],
   presets: [
         [
-          '@babel/preset-env',
+          require.resolve('@babel/preset-env'),
           {
             modules: 'commonjs',
           },
         ],
-        '@babel/preset-react',
-        '@babel/preset-typescript'
+        require.resolve('@babel/preset-react'),
+        require.resolve('@babel/preset-typescript')
       ],
 
 };

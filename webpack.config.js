@@ -6,20 +6,23 @@ module.exports = {
                 test: /\.[cm]?[tj]sx?$/,
                 use: [
                     {
-                        loader: 'babel-loader',
+                        loader: require.resolve('babel-loader'),
                     },
                 ],
             },
             {
                 test: /\.css$/,
                 use: [
-                    {loader: 'css-loader'},
+                    {loader: require.resolve('css-loader')},
                 ]
             }
         ]
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
+        fallback: {
+            crypto: false,
+        }
     },
     optimization: {
         minimize: false,
